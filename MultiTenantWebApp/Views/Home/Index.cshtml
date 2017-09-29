@@ -37,7 +37,7 @@
     function getToken() {
         $.ajax({
             type: 'POST',
-            url: '/api/Token',
+            url: '/Token',
             data: tokenLoginData
         }).done(function (data) {
             console.log('Token: ' + data.access_token);

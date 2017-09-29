@@ -26,8 +26,8 @@ namespace MultiTenantWebApp.Controllers
                 Username = username,
                 TenantName = tenantName,
                 PlainToken = plainToken
-
             };
+
             return View("ShowUserFull", modelData);
         }
 
@@ -44,14 +44,11 @@ namespace MultiTenantWebApp.Controllers
             {
                 Username = username,
                 PlainToken = plainToken
-
             };
-            return View("ShowUser", modelData);
 
+            return View("ShowUser", modelData);
         }
 
-
- 
 
         public ActionResult TestToken()
         {
@@ -71,10 +68,8 @@ namespace MultiTenantWebApp.Controllers
             return View(modelData);
         }
 
-
         // GET: Token
-        public ActionResult GetToken(string username,
-            string tenantName)
+        public ActionResult GetToken(string username, string tenantName)
         {
             string plainToken;
             var tokenValue =
@@ -96,6 +91,5 @@ namespace MultiTenantWebApp.Controllers
             public string Username { get; set; }
             public string TenantName { get; set; }
         }
-
     }
 }

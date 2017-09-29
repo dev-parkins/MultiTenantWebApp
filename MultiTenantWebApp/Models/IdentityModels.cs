@@ -12,6 +12,14 @@ using System.Linq;
 
 namespace MultiTenantWebApp.Models
 {
+    [Table("Customer")]
+    public class Customer
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int CustomerId { get; set; }
+    }
+
     [Table("AspNetTenants")]
     public class Tenant
     {
@@ -43,11 +51,12 @@ namespace MultiTenantWebApp.Models
         }
     }
 
+    [DbConfigurationType(typeof(DataConfiguration))]
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Tenant> Tenants { get; set; }
-
         public DbSet<Speaker> Speakers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
