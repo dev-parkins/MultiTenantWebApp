@@ -123,3 +123,5 @@ C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.We
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Net.Http.Formatting.xml
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.xml
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.WebHost.xml
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.Owin.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.Owin.xml

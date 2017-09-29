@@ -8,11 +8,15 @@ using Owin;
 using MultiTenantWebApp.Models;
 using System.Linq;
 using System.Web;
+using Microsoft.Owin.Security.OAuth;
+using MultiTenantWebApp.Providers;
 
 namespace MultiTenantWebApp
 {
     public partial class Startup
     {
+        public static string PublicClientId { get; private set; }
+
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -84,6 +88,16 @@ namespace MultiTenantWebApp
                 ctx.Environment.Add("MultiTenant", tenant);
                 await next();
             });
+
+            var PublicClientId = "self";
+            var OAuthOptions = new OAuthAuthorizationServerOptions()
+            {
+                TokenEndpointPath = new PathString("/Token"),
+                Provider = new ApplicationOAuthProvider(PublicClientId),
+                AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+                AllowInsecureHttp = true // remove this prior to production
+            };
         }
 
         private bool IsApiRequest(IOwinRequest request)
