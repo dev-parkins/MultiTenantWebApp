@@ -4,24 +4,92 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
+    var loginData = {
+        Email: 'joe22@smith.com',
+        Password: 'Abc123!',
+        ConfirmPassword: 'Abc123!'
+    };
+
+
+    function register() {
         $.ajax({
-            url: '/api/SpeakerWebApi',
-            type: 'GET',
-            dataType: 'json',
-            data: {
-                firstName: 'John',
-                lastName: 'Williams'
-            },
-            error: function (jqXhr, textStatus, errorthrown) {
-                alert('An error has occurred');
-            },
-            success: function (data, textStatus, jqXhr) {
-                alert("Operation succeeded");
-            }
+            type: 'POST',
+            url: '/api/AccountWebApiToken/Register',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(loginData)
         })
-    })
+            .done(function (data) {
+                alert('registration success');
+            })
+            .fail(function () {
+                alert('registration failed');
+            });
+    };
+
+
+    var tokenLoginData = {
+        grant_type: 'password',
+        username: 'joe22@smith.com',
+        password: 'Abc123!'
+    };
+
+
+    function getToken() {
+        $.ajax({
+            type: 'POST',
+            url: '/api/Token',
+            data: tokenLoginData
+        }).done(function (data) {
+            console.log('Token: ' + data.access_token);
+            localStorage.setItem('theToken', data.access_token);
+            alert('token: ' + data.access_token);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR.responseText);
+        });
+    }
+
+    function getAuthData() {
+        var token = localStorage.getItem('theToken');
+        var headers = {};
+        if (token) {
+            headers.Authorization = 'Bearer ' + token;
+        }
+        $.ajax({
+            type: 'GET',
+            url: 'api/SpeakerWebApi',
+            headers: headers
+        }).done(function (data) {
+            alert(JSON.stringify(data));
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.responseText);
+        });
+    }
+
+    //$(document).ready(function () {
+    //    $.ajax({
+    //        url: '/api/SpeakerWebApi',
+    //        type: 'GET',
+    //        dataType: 'json',
+    //        data: {
+    //            firstName: 'John',
+    //            lastName: 'Williams'
+    //        },
+    //        error: function (jqXhr, textStatus, errorthrown) {
+    //            alert('An error has occurred');
+    //        },
+    //        success: function (data, textStatus, jqXhr) {
+    //            alert("Operation succeeded");
+    //        }
+    //    })
+    //})
 </script>
+
+
+<br />
+<button type="button" onclick="register()">Register joe22</button>
+&nbsp;
+<button type="button" onclick="getToken()">Get Token For joe22</button>
+&nbsp;
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>

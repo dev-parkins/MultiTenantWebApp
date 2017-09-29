@@ -125,3 +125,17 @@ C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.We
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.WebHost.xml
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.Owin.dll
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.Owin.xml
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.IO.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Net.Http.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Runtime.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.ValueTuple.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.IdentityModel.Tokens.Jwt.xml
