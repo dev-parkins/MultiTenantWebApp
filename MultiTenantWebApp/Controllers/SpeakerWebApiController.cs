@@ -10,6 +10,7 @@ namespace MultiTenantWebApp.Controllers
 {
     public class SpeakerWebApiController : MultiTenantWebApiController
     {
+        [Authorize]
         // GET: api/SpeakerWebApi
         public IEnumerable<Speaker> Get()
         {
