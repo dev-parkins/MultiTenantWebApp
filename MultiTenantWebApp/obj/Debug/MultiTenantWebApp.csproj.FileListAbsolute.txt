@@ -117,3 +117,9 @@ C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\obj\Debug\Mul
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\obj\Debug\MultiTenantWebApp.csproj.CoreCompileInputs.cache
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\obj\Debug\MultiTenantWebApp.dll
 C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\obj\Debug\MultiTenantWebApp.pdb
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Net.Http.Formatting.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.WebHost.dll
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Net.Http.Formatting.xml
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.xml
+C:\Users\cparkins\Source\Repos\MultiTenantWebApp\MultiTenantWebApp\bin\System.Web.Http.WebHost.xml
