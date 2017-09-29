@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MultiTenantWebApp.Models;
+using System.Linq;
 
 namespace MultiTenantWebApp
 {
@@ -63,6 +64,46 @@ namespace MultiTenantWebApp
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            app.Use(async (ctx, next) =>
+            {
+                Tenant tenant = GetTenantBasedOnUrl(ctx.Request.Uri.Host);
+                if (tenant == null)
+                {
+                    throw new ApplicationException("tenant not found");
+                }
+
+                ctx.Environment.Add("MultiTenant", tenant);
+                await next();
+            });
+        }
+
+        //Not efficient, will do on every request - check different course
+        private Tenant GetTenantBasedOnUrl(string urlHost)
+        {
+            if (string.IsNullOrEmpty(urlHost))
+            {
+                throw new ApplicationException(
+                    "urlHost must be specified");
+            }
+
+            Tenant tenant;
+
+            using (var db = new ApplicationDbContext())
+            {
+                tenant = db.Tenants.
+                    FirstOrDefault(a => a.DomainName.ToLower().Equals(urlHost));
+                if (tenant == null)
+                {
+                    tenant = db.Tenants.FirstOrDefault(a => a.Default);
+                    if (tenant == null)
+                    {
+                        throw new ApplicationException
+                            ("tenant not found based on URL, no default found");
+                    }
+                }
+            }
+            return tenant;
         }
     }
 }

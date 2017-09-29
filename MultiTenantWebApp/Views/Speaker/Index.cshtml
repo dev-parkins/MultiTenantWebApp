@@ -1,0 +1,34 @@
+﻿@model System.Collections.Generic.List<MultiTenantWebApp.Models.Speaker>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>FirstName</td>
+                    <td>LastName</td>
+                    <td>TenantId</td>
+                </tr>
+            </thead>
+            @foreach(var speaker in Model)
+            {
+                <tr>
+                    <td>@speaker.FirstName</td>
+                    <td>@speaker.LastName</td>
+                    <td>@speaker.TenantId</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
